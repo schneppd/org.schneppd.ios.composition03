@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,27 +14,43 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Composition03" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pmv-RC-1UV"/>
+                        <viewControllerLayoutGuide type="bottom" id="xo8-CF-JjB"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="hD2-w7-m1r">
-                                <rect key="frame" x="20" y="20" width="130" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hD2-w7-m1r">
+                                <rect key="frame" x="16" y="20" width="136.5" height="254"/>
                                 <color key="backgroundColor" red="0.31369922089081226" green="1" blue="0.5375607410250598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="4bb-hr-qsU">
-                                <rect key="frame" x="170" y="20" width="130" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bb-hr-qsU">
+                                <rect key="frame" x="202.5" y="20" width="136.5" height="254"/>
                                 <color key="backgroundColor" red="1" green="0.98999480100163539" blue="0.30948976551616447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="EeX-7O-xWK">
-                                <rect key="frame" x="20" y="294" width="280" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EeX-7O-xWK">
+                                <rect key="frame" x="20" y="294" width="319" height="254"/>
                                 <color key="backgroundColor" red="0.2978451050743004" green="0.70184105958743848" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4bb-hr-qsU" firstAttribute="top" secondItem="Pmv-RC-1UV" secondAttribute="bottom" id="Buj-u9-fLb"/>
+                            <constraint firstItem="4bb-hr-qsU" firstAttribute="width" secondItem="hD2-w7-m1r" secondAttribute="width" id="GFd-Ar-dBx"/>
+                            <constraint firstItem="4bb-hr-qsU" firstAttribute="leading" secondItem="hD2-w7-m1r" secondAttribute="trailing" constant="50" id="MfN-Ju-OHs"/>
+                            <constraint firstItem="EeX-7O-xWK" firstAttribute="height" secondItem="hD2-w7-m1r" secondAttribute="height" id="NQT-UR-a8n"/>
+                            <constraint firstItem="4bb-hr-qsU" firstAttribute="height" secondItem="hD2-w7-m1r" secondAttribute="height" id="Qc7-bG-Lgp"/>
+                            <constraint firstItem="hD2-w7-m1r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TNV-8q-Vtl"/>
+                            <constraint firstItem="EeX-7O-xWK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="W7o-y8-OCz"/>
+                            <constraint firstItem="xo8-CF-JjB" firstAttribute="top" secondItem="EeX-7O-xWK" secondAttribute="bottom" constant="119" id="eg6-o4-zQ7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4bb-hr-qsU" secondAttribute="trailing" constant="20" id="hT7-OJ-rrz"/>
+                            <constraint firstItem="EeX-7O-xWK" firstAttribute="top" secondItem="hD2-w7-m1r" secondAttribute="bottom" constant="20" id="jh5-f6-dJe"/>
+                            <constraint firstItem="xo8-CF-JjB" firstAttribute="top" secondItem="EeX-7O-xWK" secondAttribute="bottom" constant="119" id="x9F-kC-STR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EeX-7O-xWK" secondAttribute="trailing" constant="20" id="xPx-o7-lm9"/>
+                            <constraint firstItem="hD2-w7-m1r" firstAttribute="top" secondItem="Pmv-RC-1UV" secondAttribute="bottom" id="zI7-xX-WEH"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="BottomView" destination="EeX-7O-xWK" id="qip-CT-sC3"/>
@@ -43,12 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73.5" y="137.5"/>
+            <point key="canvasLocation" x="117.60000000000001" y="123.68815592203899"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
